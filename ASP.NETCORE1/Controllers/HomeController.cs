@@ -1,13 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using ASP.NETCORE1.Models;
 
 namespace ASP.NETCORE1.Controllers
 {
     public class HomeController : Controller
     {
+     //IMessagesService_messagesService = new FileMessagesService();
+
         public IActionResult Index()
         {
             return View();
@@ -16,7 +15,7 @@ namespace ASP.NETCORE1.Controllers
         {
             return View();
         }
-      
+
         public IActionResult Contact()
         {
             return View();
@@ -25,6 +24,22 @@ namespace ASP.NETCORE1.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public IActionResult Doctor()
+        
+        {
+            return View("Doctor");
+        }
+        [HttpPost]
+        public IActionResult FeverCheck(int temperature)
+        {
+            System.Diagnostics.Debug.WriteLine(temperature);
+            DoctorModel dc = new DoctorModel();
+            dc.temperature = temperature;
+
+           return  View(dc);
+        }
+
     }
 
 }
