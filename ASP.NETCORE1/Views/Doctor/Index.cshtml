@@ -1,0 +1,24 @@
+﻿@model ASP.NETCORE1.Models.DoctorModel
+
+
+@{
+    ViewData["Title"] = "Doctor";
+}
+
+<h1>Doctor</h1>
+
+
+
+@*<form asp-action="/FeverCheck" asp-controller="Home" method="post" />
+    <input type="radio" name="/FeverCheck" value="HighFever" />
+    <input type="radio" name="/FeverCheck" value="NoFever" />
+    <input type="radio" name="/FeverCheck" value="Hypotermia" />
+    <input type="submit" value="Doctor" />*@
+
+@using (Html.BeginForm("FeverCheck", "Doctor", FormMethod.Post))
+{
+    @Html.TextBoxFor(m => m.temperature)
+    @Html.LabelFor(model => model.temperature)
+
+    <input type="submit" value="Submit form" />
+}

@@ -34,10 +34,28 @@ namespace ASP.NETCORE1.Controllers
         public IActionResult FeverCheck(int temperature)
         {
             System.Diagnostics.Debug.WriteLine(temperature);
-            DoctorModel dc = new DoctorModel();
-            dc.temperature = temperature;
+            if (temperature > 39)
+            {
+                ViewBag.MyMessage("High fever");
+                
 
-           return  View(dc);
+            }
+            else if (temperature <= 10)
+            {
+                ViewBag.MyMessage("Hyportemia");
+               
+
+            } else {
+                ViewBag.MyMessage("No fever");
+                
+            }
+
+            return View();
+
+
+
+
+
         }
 
     }
