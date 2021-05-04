@@ -33,22 +33,7 @@ namespace ASP.NETCORE1.Controllers
         [HttpPost]
         public IActionResult FeverCheck(int temperature)
         {
-            System.Diagnostics.Debug.WriteLine(temperature);
-            if (temperature > 39)
-            {
-                ViewBag.MyMessage("High fever");
-                
-
-            }
-            else if (temperature <= 10)
-            {
-                ViewBag.MyMessage("Hyportemia");
-               
-
-            } else {
-                ViewBag.MyMessage("No fever");
-                
-            }
+         
 
             return View();
 

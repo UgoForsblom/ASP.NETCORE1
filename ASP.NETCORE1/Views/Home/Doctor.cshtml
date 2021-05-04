@@ -23,7 +23,25 @@
     <input type="submit" value="Submit form" />
 }
 
+{   System.Diagnostics.Debug.WriteLine(temperature);
+            if (temperature > 39)
+            {
+                ViewBag.MyMessage("High fever");
 
+
+            }
+            else if (temperature <= 10)
+            {
+                ViewBag.MyMessage("Hyportemia");
+
+
+            } else {
+                ViewBag.MyMessage("No fever");
+
+            }
+
+
+}
 
 
 

@@ -31,6 +31,13 @@ namespace ASP.NETCORE1
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
+
+            { endpoints.MapControllerRoute(
+                    name: "Doctor",
+                    pattern: "{controller=Doctor}/{action=FeverCheck}/{temperature}");
+
+            });
+            app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
